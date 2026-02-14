@@ -1,5 +1,5 @@
 import type { Bike } from "../../types/Bikes";
-import { mockData } from "./client";
+import { bikes } from "./client";
 
 type BikeQuery = {
   brand?: string;
@@ -9,7 +9,7 @@ type BikeQuery = {
 };
 
 export async function getBikes(params?: BikeQuery): Promise<Bike[]> {
-  let data = mockData as Bike[];
+  let data = bikes as Bike[];
   if (params) {
     if (params.brand)
       data = data.filter(
@@ -32,5 +32,5 @@ export async function getBikes(params?: BikeQuery): Promise<Bike[]> {
 }
 
 export async function getBikeDetail(id: string): Promise<Bike | null> {
-  return ((mockData as Bike[]).find((b) => b.id === id) ?? null) as Bike | null;
+  return ((bikes as Bike[]).find((b) => b.id === id) ?? null) as Bike | null;
 }
