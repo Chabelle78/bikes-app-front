@@ -6,7 +6,7 @@ import {
 
 import MainLayout from "./layout/MainLayout";
 import PageLogin from "./pages/PageLogin";
-import Home from "./pages/Home";
+import Home from "./pages/Bikes/Home";
 import Error from "./pages/Error";
 
 export const LocationDisplay = () => {

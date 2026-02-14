@@ -1,0 +1,302 @@
+[
+  {
+    "id": "6990447f919ad22f30def417",
+    "name": "Domane SLR 9",
+    "brand": {
+      "id": "b3f9a1e2-6c4d-4a2b-9f1e-0a1b2c3d4e5f",
+      "name": "Trek",
+      "country": { "id": "country_us", "name": "United States", "code": "US" },
+      "founded_year": 1976,
+      "description": "American bicycle and cycling product manufacturer.",
+      "logo_url": "https://example.com/logos/trek.png"
+    },
+    "description": "The Domane SLR 9 is Trek's flagship endurance road bike, featuring IsoSpeed decouplers for superior comfort on long rides. Built with OCLV 800 carbon, it's incredibly light yet maintains excellent compliance over rough roads.",
+    "riding_type": "Road",
+    "frame_material": "Carbon",
+    "wheel_type": "Carbon",
+    "weight": "7.8 kg",
+    "color": "Red",
+    "features": [
+      "IsoSpeed Front & Rear",
+      "OCLV 800 Carbon Frame",
+      "Integrated Storage",
+      "Electronic Shifting Ready"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800"
+  },
+  {
+    "id": "6990447f919ad22f30def418",
+    "name": "Stumpjumper Expert",
+    "brand": {
+      "id": "c4e8b2d1-7f5a-4b3c-8d2f-1b2c3d4e5f6a",
+      "name": "Specialized",
+      "country": { "id": "country_us", "name": "United States", "code": "US" },
+      "founded_year": 1974,
+      "description": "Specialized Bicycle Components is an American company designing and manufacturing bicycles and related products.",
+      "logo_url": "https://example.com/logos/specialized.png"
+    },
+    "description": "The Stumpjumper Expert is a legendary trail bike that delivers exceptional performance on technical terrain. With 140mm of travel and a FACT 11m carbon frame, it's built to conquer any mountain.",
+    "riding_type": "VTT",
+    "frame_material": "Carbon",
+    "wheel_type": "Carbon",
+    "weight": "12.5 kg",
+    "color": "Green",
+    "features": [
+      "FACT 11m Carbon Frame",
+      "140mm Travel",
+      "SWAT Door Storage",
+      "29\" Wheels"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=800"
+  },
+  {
+    "id": "6990447f919ad22f30def419",
+    "name": "TCR Advanced Pro",
+    "brand": {
+      "id": "d5a7c3b2-8e6f-4c5d-9a3b-2c3d4e5f6a7b",
+      "name": "Giant",
+      "country": { "id": "country_tw", "name": "Taiwan", "code": "TW" },
+      "founded_year": 1972,
+      "description": "Giant Manufacturing is a Taiwanese bicycle manufacturer and one of the world's largest.",
+      "logo_url": "https://example.com/logos/giant.png"
+    },
+    "description": "The TCR Advanced Pro is Giant's race-ready machine, designed for speed and efficiency. Its Advanced-Grade Composite frame delivers unmatched stiffness-to-weight ratio for explosive acceleration.",
+    "riding_type": "Road",
+    "frame_material": "Carbon",
+    "wheel_type": "Carbon",
+    "weight": "7.2 kg",
+    "color": "Black",
+    "features": [
+      "Advanced Composite Frame",
+      "OverDrive 2 Steerer",
+      "PowerCore Bottom Bracket",
+      "AeroSystem Shaped Tubes"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800"
+  },
+  {
+    "id": "6990447f919ad22f30def41a",
+    "name": "SuperSix EVO",
+    "brand": {
+      "id": "e6b8d4c3-9f7a-4d6e-0b4c-3d4e5f6a7b8c",
+      "name": "Cannondale",
+      "country": { "id": "country_us", "name": "United States", "code": "US" },
+      "founded_year": 1971,
+      "description": "Cannondale is an American brand of premium bicycles known for innovation in materials and design.",
+      "logo_url": "https://example.com/logos/cannondale.png"
+    },
+    "description": "The SuperSix EVO combines race-winning performance with all-day comfort. Its BallisTec carbon construction creates an incredibly light frame that excels in both climbs and sprints.",
+    "riding_type": "Road",
+    "frame_material": "Carbon",
+    "wheel_type": "Carbon",
+    "weight": "7.4 kg",
+    "color": "Blue",
+    "features": [
+      "BallisTec Carbon",
+      "SAVE Micro-Suspension",
+      "Truncated Airfoil Tubes",
+      "Ai Offset Drivetrain"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800"
+  },
+  {
+    "id": "6990447f919ad22f30def41b",
+    "name": "Spark RC",
+    "brand": {
+      "id": "f7c9e5d4-0a8b-4e7f-1c5d-4e5f6a7b8c9d",
+      "name": "Scott",
+      "country": { "id": "country_ch", "name": "Switzerland", "code": "CH" },
+      "founded_year": 1958,
+      "description": "Scott Sports is a Swiss company producing bicycles, winter equipment and motorsports gear.",
+      "logo_url": "https://example.com/logos/scott.png"
+    },
+    "description": "The Spark RC is Scott's ultimate XC race weapon, featuring the innovative TwinLoc system for instant suspension adjustment. Built for World Cup victories, it's the choice of professional riders worldwide.",
+    "riding_type": "VTT",
+    "frame_material": "Carbon",
+    "wheel_type": "Carbon",
+    "weight": "10.8 kg",
+    "color": "Yellow",
+    "features": [
+      "HMX Carbon Frame",
+      "TwinLoc Suspension",
+      "100mm Travel",
+      "Integrated Cockpit"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1594495894542-a46cc73e081a?w=800"
+  },
+  {
+    "id": "6990447f919ad22f30def41c",
+    "name": "P5 Disc",
+    "brand": {
+      "id": "a1d2e3f4-1b2c-4a5d-6e7f-5f6a7b8c9d0e",
+      "name": "Cervélo",
+      "country": { "id": "country_ca", "name": "Canada", "code": "CA" },
+      "founded_year": 1995,
+      "description": "Cervélo is a Canadian manufacturer focused on high-performance road and triathlon bikes.",
+      "logo_url": "https://example.com/logos/cervelo.png"
+    },
+    "description": "The P5 Disc is Cervélo's most advanced triathlon bike, engineered in their own wind tunnel for maximum aerodynamic efficiency. Every detail is optimized for speed over long distances.",
+    "riding_type": "Triathlon",
+    "frame_material": "Carbon",
+    "wheel_type": "Disc",
+    "weight": "8.5 kg",
+    "color": "White",
+    "features": [
+      "Wind Tunnel Developed",
+      "Integrated Hydration",
+      "Adjustable Fit",
+      "Disc Brake Ready"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1505705694340-019e1e335916?w=800"
+  },
+  {
+    "id": "6990447f919ad22f30def41d",
+    "name": "Oltre RC",
+    "brand": {
+      "id": "b2e3f4a5-2c3d-4b6e-7f8a-6a7b8c9d0e1f",
+      "name": "Bianchi",
+      "country": { "id": "country_it", "name": "Italy", "code": "IT" },
+      "founded_year": 1885,
+      "description": "Bianchi is an iconic Italian bicycle manufacturer known for its Celeste color and racing heritage.",
+      "logo_url": "https://example.com/logos/bianchi.png"
+    },
+    "description": "The Oltre RC represents Bianchi's commitment to Italian craftsmanship and innovation. Its distinctive Celeste color and cutting-edge aerodynamics make it both beautiful and fast.",
+    "riding_type": "Road",
+    "frame_material": "Carbon",
+    "wheel_type": "Carbon",
+    "weight": "7.6 kg",
+    "color": "Green",
+    "features": [
+      "CV Carbon Vibration Cancelling",
+      "Reparto Corse Design",
+      "Integrated Cockpit",
+      "Aero Optimization"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=800"
+  },
+  {
+    "id": "6990447f919ad22f30def41e",
+    "name": "Grail CF SLX",
+    "brand": {
+      "id": "c3f4a5b6-3d4e-4c7f-8a9b-7b8c9d0e1f2a",
+      "name": "Canyon",
+      "country": { "id": "country_de", "name": "Germany", "code": "DE" },
+      "founded_year": 1985,
+      "description": "Canyon Bicycles is a German direct-to-consumer bicycle company known for performance road and gravel bikes.",
+      "logo_url": "https://example.com/logos/canyon.png"
+    },
+    "description": "The Grail CF SLX revolutionizes gravel riding with its unique double-decker handlebar design. Built for comfort and control on unpaved roads, it's the ultimate adventure machine.",
+    "riding_type": "Gravel",
+    "frame_material": "Carbon",
+    "wheel_type": "Aluminum",
+    "weight": "8.2 kg",
+    "color": "Silver",
+    "features": [
+      "Hover Bar Technology",
+      "CF SLX Carbon",
+      "Adventure-Ready Geometry",
+      "Tire Clearance 42mm"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1502744688674-c619d1586c9e?w=800"
+  },
+  {
+    "id": "6990447f919ad22f30def41f",
+    "name": "FX Sport Carbon",
+    "brand": {
+      "id": "brand_trek",
+      "name": "Trek",
+      "country": { "id": "country_us", "name": "United States", "code": "US" },
+      "founded_year": 1976,
+      "description": "American bicycle and cycling product manufacturer.",
+      "logo_url": "https://example.com/logos/trek.png"
+    },
+    "description": "The FX Sport Carbon blends fitness-focused performance with urban practicality. Its IsoSpeed decoupler provides comfort for daily commutes while maintaining efficiency for longer rides.",
+    "riding_type": "Urban",
+    "frame_material": "Carbon",
+    "wheel_type": "Aluminum",
+    "weight": "9.5 kg",
+    "color": "Black",
+    "features": [
+      "IsoSpeed Decoupler",
+      "Carbon Fork",
+      "Flat Bar Design",
+      "Rack & Fender Compatible"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
+  },
+  {
+    "id": "6990447f919ad22f30def420",
+    "name": "Sirrus X 5.0",
+    "brand": {
+      "id": "brand_specialized",
+      "name": "Specialized",
+      "country": { "id": "country_us", "name": "United States", "code": "US" },
+      "founded_year": 1974,
+      "description": "Specialized Bicycle Components is an American company designing and manufacturing bicycles and related products.",
+      "logo_url": "https://example.com/logos/specialized.png"
+    },
+    "description": "The Sirrus X 5.0 is designed for riders who want to explore beyond pavement. With wider tires and a more relaxed geometry, it handles city streets and light trails with ease.",
+    "riding_type": "Urban",
+    "frame_material": "Aluminum",
+    "wheel_type": "Aluminum",
+    "weight": "10.2 kg",
+    "color": "Blue",
+    "features": [
+      "Future Shock 2.0",
+      "Carbon Fork",
+      "Dual-Sport Capability",
+      "Reflective Details"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1571333250630-f0230c320b6d?w=800"
+  },
+  {
+    "id": "6990447f919ad22f30def421",
+    "name": "Speedmax CF SLX",
+    "brand": {
+      "id": "brand_canyon",
+      "name": "Canyon",
+      "country": { "id": "country_de", "name": "Germany", "code": "DE" },
+      "founded_year": 1985,
+      "description": "Canyon Bicycles is a German direct-to-consumer bicycle company known for performance road and gravel bikes.",
+      "logo_url": "https://example.com/logos/canyon.png"
+    },
+    "description": "The Speedmax CF SLX is Canyon's ultimate time trial machine, designed with input from professional triathletes. Its aggressive geometry and aero profile deliver maximum speed.",
+    "riding_type": "Triathlon",
+    "frame_material": "Carbon",
+    "wheel_type": "Disc",
+    "weight": "8.1 kg",
+    "color": "Red",
+    "features": [
+      "CFD Optimized Frame",
+      "Integrated Storage",
+      "Adjustable Cockpit",
+      "Aero Seatpost"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800"
+  },
+  {
+    "id": "6990447f919ad22f30def422",
+    "name": "Epic World Cup",
+    "brand": {
+      "id": "brand_specialized",
+      "name": "Specialized",
+      "country": { "id": "country_us", "name": "United States", "code": "US" },
+      "founded_year": 1974,
+      "description": "Specialized Bicycle Components is an American company designing and manufacturing bicycles and related products.",
+      "logo_url": "https://example.com/logos/specialized.png"
+    },
+    "description": "The Epic World Cup is Specialized's ultimate cross-country race bike, featuring the Brain 2.0 suspension for automatic lockout. It's the weapon of choice for World Cup champions.",
+    "riding_type": "VTT",
+    "frame_material": "Carbon",
+    "wheel_type": "Carbon",
+    "weight": "9.8 kg",
+    "color": "Orange",
+    "features": [
+      "Brain 2.0 Suspension",
+      "FACT 12m Carbon",
+      "100mm Travel",
+      "S-Works Level Build"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=800"
+  }
+]
