@@ -1,7 +1,7 @@
-import { CardBikes } from "@/features/components/Card/CardBikes";
-import styles from "./DemoCards.module.scss";
+import { Card } from "@/features/components/Card/Card";
 import type { Bike } from "@/types/Bikes";
 
+import styles from "./DemoCards.module.scss";
 interface BikesProps {
   bikes: Bike[];
 }
@@ -16,10 +16,10 @@ export function DemoCards({ bikes }: BikesProps) {
     <div className={styles.demoContainer}>
       <div className={styles.grid}>
         {bikes.map((bike: Bike) => (
-          <CardBikes
+          <Card
             key={bike.id}
-            bike={bike}
-            onDetailsClick={handleDetailsClick}
+            item={bike}
+            onClick={handleDetailsClick}
           />
         ))}
       </div>
