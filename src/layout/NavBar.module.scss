@@ -1,0 +1,80 @@
+.containerNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #111;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #666;
+  }
+
+  &:focus {
+    outline: 2px solid #007acc;
+    outline-offset: 2px;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-left: 0;
+
+  img {
+    height: 64px;
+  }
+
+  p {
+    margin: 0;
+    margin-left: 12px;
+    color: #111;
+    font-style: italic;
+  }
+}
+
+// Media queries pour responsive mobile
+@media (max-width: 768px) {
+  .containerNavbar {
+    padding: 0 16px;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .brand {
+    flex: 1;
+    justify-content: center;
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .containerNavbar {
+    padding: 0 12px;
+  }
+
+  .brand {
+    img {
+      height: 48px;
+    }
+
+    p {
+      display: none;
+    }
+  }
+}
