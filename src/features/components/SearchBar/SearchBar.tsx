@@ -8,13 +8,11 @@ export default function SearchBar() {
   const filters = useAppSelector(selectFilters);
   const [searchValue, setSearchValue] = useState(filters.search_term || "");
 
-  // Débounce pour éviter trop de mises à jour
   useEffect(() => {
     const timer = setTimeout(() => {
       if (searchValue) {
         dispatch(updateFilter({ search_term: searchValue }));
       } else {
-        // Si le champ est vide, on retire le filtre de recherche
         const { ...rest } = filters;
         dispatch(updateFilter(rest));
       }

@@ -4,7 +4,7 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import MainLayout from "./layout/MainLayout";
+import MainLayout from "./layout/MainLayout/MainLayout";
 import PageLogin from "./pages/PageLogin";
 import Home from "./pages/Bikes/Home";
 import Error from "./pages/Error";

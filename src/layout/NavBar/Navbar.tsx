@@ -1,5 +1,5 @@
 import styles from "./NavBar.module.scss";
-import menuIcon from "../assets/images/menu-icon.svg";
+import menuIcon from "@/assets/images/menu-icon.svg";
 
 interface NavbarProps {
   onMenuToggle: () => void;

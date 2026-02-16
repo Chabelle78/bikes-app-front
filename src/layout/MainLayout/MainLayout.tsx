@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
 
-import Navbar from './Navbar';
-import FiltersBar from './FiltersBar';
+import Navbar from '../NavBar/Navbar';
 
 import styles from './MainLayout.module.scss';
+import SidesBar from '../SideBar/SideBar';
 
 function MainLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -25,7 +25,7 @@ function MainLayout() {
       </div>
       <div className={styles.content}>
         <div className={`${styles.sidebar} ${isSidebarOpen ? styles.sidebarOpen : ''}`}>
-          <FiltersBar />
+          <SidesBar />
         </div>
         {isSidebarOpen && (
           <div className={styles.overlay} onClick={closeSidebar} />

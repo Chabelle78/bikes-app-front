@@ -1,11 +1,13 @@
-import { DemoCards } from "./DemoCards";
+import { Card } from "@/features/components/Card/Card";
+import type { Bike } from "@/types/Bikes";
+
 import useHome from "./useHome";
 
 import styles from "./Home.module.scss";
 import FiltersHeader from "@/features/components/FilltersHeader/FiltersHeader";
 
 export default function Home() {
-  const { bikes, loading, error } = useHome();
+  const { bikes, loading, error, handleDetailsClick } = useHome();
 
   return (
     <div className={styles.container}>
@@ -15,7 +17,13 @@ export default function Home() {
       {loading && <p>Chargement...</p>}
       {error && <p style={{ color: "red" }}>Erreur: {error}</p>}
       <div className={styles.content}>
-        <DemoCards bikes={bikes} />
+        <div className={styles.demoContainer}>
+          <div className={styles.grid}>
+            {bikes.map((bike: Bike) => (
+              <Card key={bike.id} item={bike} onClick={handleDetailsClick} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -12,7 +12,6 @@ interface BikeCardProps {
 }
 
 export function Card({ item, onClick }: BikeCardProps) {
-
   return (
     <div className={styles.bikeCard}>
       <HeaderBadges
@@ -20,7 +19,9 @@ export function Card({ item, onClick }: BikeCardProps) {
         type={item.riding_type}
         brand={item.brand}
       />
-      <Description        title={item.name}        description={item.description}
+      <Description
+        title={item.name}
+        description={item.description}
         weight={item.weight}
         wheel={item.wheel_type}
       />

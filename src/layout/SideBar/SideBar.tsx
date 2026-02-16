@@ -3,9 +3,9 @@ import Filters from "@/features/components/Filters/Filters";
 import { useAppDispatch } from "@/app/hooks";
 import { clearFilters } from "@/features/bikesSlice";
 
-import styles from './FiltersBar.module.scss';
+import styles from './SideBar.module.scss';
 
-export default function FiltersBar() {
+export default function SidesBar() {
     const dispatch = useAppDispatch();
 
     const handleReset = () => {
