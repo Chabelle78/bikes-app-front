@@ -1,32 +1,23 @@
-import { useEffect, useState } from "react";
-import { getBikes } from "../../services/api/bikes";
-import type { Bike } from "../../types/Bikes";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import {
+  fetchBikes,
+  selectFilteredBikes,
+  selectBikesLoading,
+  selectBikesError,
+} from "@/features/bikesSlice";
+import { fetchBrands } from "@/features/brandsSlice";
 
 export default function useHome() {
-  const [bikes, setBikes] = useState<Bike[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const dispatch = useAppDispatch();
+  const bikes = useAppSelector(selectFilteredBikes);
+  const loading = useAppSelector(selectBikesLoading);
+  const error = useAppSelector(selectBikesError);
 
   useEffect(() => {
-    let mounted = true;
-    // setLoading(true); <-- removed to avoid synchronous setState in effect
-    getBikes()
-      .then((data) => {
-        if (!mounted) return;
-        setBikes(data.slice(0, 10));
-      })
-      .catch((err) => {
-        if (!mounted) return;
-        setError(err?.message ?? String(err));
-      })
-      .finally(() => {
-        if (!mounted) return;
-        setLoading(false);
-      });
-    return () => {
-      mounted = false;
-    };
-  }, []);
+    dispatch(fetchBikes());
+    dispatch(fetchBrands());
+  }, [dispatch]);
 
   return { bikes, loading, error };
 }

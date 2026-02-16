@@ -19,7 +19,7 @@
 
 .searchInput {
   width: 100%;
-  padding: 8px 12px 8px 36px;
+  padding: 8px 36px 8px 36px;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
   font-size: 13px;
@@ -38,5 +38,28 @@
 
   &:hover {
     border-color: #d1d5db;
+  }
+}
+
+.clearButton {
+  position: absolute;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: #e5e7eb;
+  color: #6b7280;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #d1d5db;
+    color: #374151;
   }
 }

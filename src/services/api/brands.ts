@@ -1,5 +1,6 @@
 import type { Country } from "@/types/Country";
-import { brands, type Brand } from "./client";
+import type { Brand } from "@/types/Brand";
+import { brands } from "./client";
 
 interface BrandQuery {
   name: string;
