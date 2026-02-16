@@ -93,9 +93,10 @@ export const selectFilteredBikes = (state: RootState) => state.bikes.filteredBik
 export const selectFilters = (state: RootState) => state.bikes.filters;
 export const selectBikesLoading = (state: RootState) => state.bikes.loading;
 export const selectBikesError = (state: RootState) => state.bikes.error;
-export const selectActiveFiltersCount = (state: RootState) => {
-  return Object.keys(state.bikes.filters).length;
-};
+export const selectActiveFiltersCount = (state: RootState) => 
+  Object.values(state.bikes.filters).filter(value => 
+    Array.isArray(value) ? value.length > 0 : Boolean(value)
+  ).length;
 
 // Export du reducer
 export default bikesSlice.reducer;
