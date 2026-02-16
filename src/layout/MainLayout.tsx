@@ -24,15 +24,15 @@ function MainLayout() {
         <Navbar onMenuToggle={toggleSidebar} />
       </div>
       <div className={styles.content}>
-        <aside className={`${styles.sidebar} ${isSidebarOpen ? styles.sidebarOpen : ''}`}>
+        <div className={`${styles.sidebar} ${isSidebarOpen ? styles.sidebarOpen : ''}`}>
           <FiltersBar />
-        </aside>
+        </div>
         {isSidebarOpen && (
           <div className={styles.overlay} onClick={closeSidebar} />
         )}
-        <main className={styles.main}>
+        <div className={styles.main}>
           <Outlet />
-        </main>
+        </div>
       </div>
       <Tooltip id="icon-button-tooltip" place="top" />
     </div>
