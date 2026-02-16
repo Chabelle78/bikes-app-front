@@ -5,7 +5,7 @@ type BikeQuery = {
   brand?: string;
   riding_type?: string;
   frame_material?: string;
-  q?: string;
+  search_term?: string;
 };
 
 export async function getBikes(params?: BikeQuery): Promise<Bike[]> {
@@ -19,12 +19,12 @@ export async function getBikes(params?: BikeQuery): Promise<Bike[]> {
       data = data.filter((b) => b.riding_type === params.riding_type);
     if (params.frame_material)
       data = data.filter((b) => b.frame_material === params.frame_material);
-    if (params.q) {
-      const q = params.q.toLowerCase();
+    if (params.search_term) {
+      const search_term = params.search_term.toLowerCase();
       data = data.filter(
         (b) =>
-          b.name.toLowerCase().includes(q) ||
-          (b.description && b.description.toLowerCase().includes(q)),
+          b.name.toLowerCase().includes(search_term) ||
+          (b.description && b.description.toLowerCase().includes(search_term)),
       );
     }
   }

@@ -26,12 +26,12 @@ export const applyFiltersBikes = (bikes: Bike[], filters: BikeFilters): Bike[] =
     filtered = filtered.filter((b) => filters.color!.includes(b.color || ''));
   }
 
-  if (filters.q) {
-    const q = filters.q.toLowerCase();
+  if (filters.search_term) {
+    const search_term = filters.search_term.toLowerCase();
     filtered = filtered.filter(
       (b) =>
-        b.name.toLowerCase().includes(q) ||
-        (b.description && b.description.toLowerCase().includes(q)),
+        b.name.toLowerCase().includes(search_term) ||
+        (b.description && b.description.toLowerCase().includes(search_term)),
     );
   }
 

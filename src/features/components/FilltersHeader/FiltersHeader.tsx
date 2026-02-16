@@ -2,9 +2,10 @@ import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { 
   selectFilters, 
   selectActiveFiltersCount,
-  removeFilter,
+  removeFilterValue,
   clearFilters
 } from '@/features/bikesSlice';
+import FilterTag from '../FilterTag/FilterTag';
 import styles from './FiltersHeader.module.scss';
 
 // Mapping des valeurs techniques vers des labels lisibles
@@ -32,8 +33,11 @@ export default function FiltersHeader() {
   const filters = useAppSelector(selectFilters);
   const activeFiltersCount = useAppSelector(selectActiveFiltersCount);
 
-  const handleRemoveFilter = (key: string) => {
-    dispatch(removeFilter(key as keyof typeof filters));
+  const handleRemoveFilter = (key: string, value: string) => {
+    dispatch(removeFilterValue({ 
+      key: key as keyof typeof filters, 
+      value 
+    }));
   };
 
   const handleClearAll = () => {
@@ -45,7 +49,7 @@ export default function FiltersHeader() {
     riding_type: 'Type',
     frame_material: 'Matériau',
     colors: 'Couleur',
-    q: 'Recherche',
+    search_term: 'Recherche',
   };
 
   // Fonction pour obtenir la valeur affichable
@@ -75,21 +79,12 @@ export default function FiltersHeader() {
               // Gérer les tableaux et les chaînes
               const values = Array.isArray(value) ? value : [value];
               return values.map((val, index) => (
-                <div key={`${key}-${index}`} className={styles.filterTag}>
-                  <span className={styles.filterLabel}>
-                    {filterLabels[key] || key}:
-                  </span>
-                  <span className={styles.filterValue}>
-                    {getDisplayValue(key, val)}
-                  </span>
-                  <button
-                    className={styles.removeButton}
-                    onClick={() => handleRemoveFilter(key)}
-                    aria-label={`Supprimer le filtre ${filterLabels[key]}`}
-                  >
-                    ×
-                  </button>
-                </div>
+                <FilterTag
+                  key={`${key}-${index}`}
+                  label={filterLabels[key] || key}
+                  value={getDisplayValue(key, val)}
+                  onRemove={() => handleRemoveFilter(key, val)}
+                />
               ));
             })}
           </div>

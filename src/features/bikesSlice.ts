@@ -11,7 +11,7 @@ export interface BikeFilters {
   riding_type?: string[];
   frame_material?: string[];
   color?: string[];
-  q?: string;
+  search_term?: string;
 }
 
 interface BikesState {
@@ -64,6 +64,23 @@ const bikesSlice = createSlice({
       state.filters = rest;
       state.filteredBikes = applyFiltersBikes(state.bikes, state.filters);
     },
+    removeFilterValue: (state, action: PayloadAction<{ key: keyof BikeFilters; value: string }>) => {
+      const { key, value } = action.payload;
+      const currentFilter = state.filters[key];
+      
+      if (Array.isArray(currentFilter)) {
+        const updatedValues = currentFilter.filter(v => v !== value);
+        if (updatedValues.length > 0) {
+          state.filters = { ...state.filters, [key]: updatedValues };
+        } else {
+          delete state.filters[key];
+        }
+      } else {
+        delete state.filters[key];
+      }
+      
+      state.filteredBikes = applyFiltersBikes(state.bikes, state.filters);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -85,7 +102,7 @@ const bikesSlice = createSlice({
 });
 
 // Export des actions
-export const { setFilters, updateFilter, clearFilters, removeFilter } = bikesSlice.actions;
+export const { setFilters, updateFilter, clearFilters, removeFilter, removeFilterValue } = bikesSlice.actions;
 
 // Sélecteurs
 export const selectAllBikes = (state: RootState) => state.bikes.bikes;
