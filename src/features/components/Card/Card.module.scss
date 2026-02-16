@@ -1,0 +1,88 @@
+.bikeCard {
+  max-width: 280px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.bikeImage {
+  width: 100%;
+  height: 300px;
+  background-image: url('@/assets/images/domane-slr9.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.features {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.detailsButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #3b82f6;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+
+  &:hover {
+    background-color: #eff6ff;
+    color: #2563eb;
+    
+    .detailsArrow {
+      transform: translateX(4px);
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.detailsIcon {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.detailsArrow {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+// Responsive
+@media (max-width: 640px) {
+  .bikeCard {
+    max-width: 100%;
+  }
+
+  .detailsButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,73 @@
+.headerBadges {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .type,
+  .brand {
+    position: absolute;
+    top: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+  }
+
+  .type {
+    left: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #334155;
+  }
+
+  .brand {
+    right: 10px;
+    background: rgba(148, 163, 184, 0.95);
+    color: #1e293b;
+  }
+}
+
+// États de chargement
+.headerBadges:not(:has(img)) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &::after {
+    content: "📷";
+    font-size: 48px;
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerBadges {
+    height: 200px;
+
+    .type,
+    .brand {
+      font-size: 12px;
+      padding: 6px 12px;
+      top: 12px;
+    }
+
+    .type {
+      left: 12px;
+    }
+
+    .brand {
+      right: 12px;
+    }
+  }
+}

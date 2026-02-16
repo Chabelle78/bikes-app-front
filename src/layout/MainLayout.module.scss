@@ -19,6 +19,7 @@
 
 .content {
   display: flex;
+  flex-direction: column;
   margin-top: 64px;
   flex: 1;
   position: relative;
@@ -29,7 +30,7 @@
   left: 0;
   top: 64px;
   bottom: 0;
-  width: 240px;
+  width: 15%;
   background-color: #ffffff;
   border-right: 1px solid #e5e5e5;
   overflow-y: auto;
@@ -42,10 +43,10 @@
 }
 
 .main {
-  flex: 1;
-  margin-left: 240px;
-  padding: 32px;
-  min-height: calc(100vh - 64px);
+  min-height: calc(100% - 64px);
+  width: 85%;
+  margin-left: 15%;
+  padding:20px;
 }
 
 // Media queries pour responsive mobile

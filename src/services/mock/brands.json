@@ -1,0 +1,98 @@
+[
+    {
+      "id": "b3f9a1e2-6c4d-4a2b-9f1e-0a1b2c3d4e5f",
+      "name": "Trek",
+      "country": {
+        "id": "country_us",
+        "name": "United States",
+        "code": "US"
+      },
+      "founded_year": 1976,
+      "description": "American bicycle and cycling product manufacturer.",
+      "logo_url": "https://example.com/logos/trek.png"
+    },
+    {
+      "id": "c4e8b2d1-7f5a-4b3c-8d2f-1b2c3d4e5f6a",
+      "name": "Specialized",
+      "country": {
+        "id": "country_us",
+        "name": "United States",
+        "code": "US"
+      },
+      "founded_year": 1974,
+      "description": "Specialized Bicycle Components is an American company designing and manufacturing bicycles and related products.",
+      "logo_url": "https://example.com/logos/specialized.png"
+    },
+    {
+      "id": "d5a7c3b2-8e6f-4c5d-9a3b-2c3d4e5f6a7b",
+      "name": "Giant",
+      "country": {
+        "id": "country_tw",
+        "name": "Taiwan",
+        "code": "TW"
+      },
+      "founded_year": 1972,
+      "description": "Giant Manufacturing is a Taiwanese bicycle manufacturer and one of the world's largest.",
+      "logo_url": "https://example.com/logos/giant.png"
+    },
+    {
+      "id": "e6b8d4c3-9f7a-4d6e-0b4c-3d4e5f6a7b8c",
+      "name": "Cannondale",
+      "country": {
+        "id": "country_us",
+        "name": "United States",
+        "code": "US"
+      },
+      "founded_year": 1971,
+      "description": "Cannondale is an American brand of premium bicycles known for innovation in materials and design.",
+      "logo_url": "https://example.com/logos/cannondale.png"
+    },
+    {
+      "id": "f7c9e5d4-0a8b-4e7f-1c5d-4e5f6a7b8c9d",
+      "name": "Scott",
+      "country": {
+        "id": "country_ch",
+        "name": "Switzerland",
+        "code": "CH"
+      },
+      "founded_year": 1958,
+      "description": "Scott Sports is a Swiss company producing bicycles, winter equipment and motorsports gear.",
+      "logo_url": "https://example.com/logos/scott.png"
+    },
+    {
+      "id": "a1d2e3f4-1b2c-4a5d-6e7f-5f6a7b8c9d0e",
+      "name": "Cervélo",
+      "country": {
+        "id": "country_ca",
+        "name": "Canada",
+        "code": "CA"
+      },
+      "founded_year": 1995,
+      "description": "Cervélo is a Canadian manufacturer focused on high-performance road and triathlon bikes.",
+      "logo_url": "https://example.com/logos/cervelo.png"
+    },
+    {
+      "id": "b2e3f4a5-2c3d-4b6e-7f8a-6a7b8c9d0e1f",
+      "name": "Bianchi",
+      "country": {
+        "id": "country_it",
+        "name": "Italy",
+        "code": "IT"
+      },
+      "founded_year": 1885,
+      "description": "Bianchi is an iconic Italian bicycle manufacturer known for its Celeste color and racing heritage.",
+      "logo_url": "https://example.com/logos/bianchi.png"
+    },
+    {
+      "id": "c3f4a5b6-3d4e-4c7f-8a9b-7b8c9d0e1f2a",
+      "name": "Canyon",
+      "country": {
+        "id": "country_de",
+        "name": "Germany",
+        "code": "DE"
+      },
+      "founded_year": 1985,
+      "description": "Canyon Bicycles is a German direct-to-consumer bicycle company known for performance road and gravel bikes.",
+      "logo_url": "https://example.com/logos/canyon.png"
+    }
+]
