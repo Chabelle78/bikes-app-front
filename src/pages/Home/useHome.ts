@@ -6,6 +6,7 @@ import {
   selectFilteredBikes,
   selectBikesLoading,
   selectBikesError,
+  clearFilters,
 } from "@/features/bikesSlice";
 import { fetchBrands } from "@/features/brandsSlice";
 import { useNavigate } from "react-router-dom";
@@ -29,5 +30,9 @@ export default function useHome() {
     navigate(`/bikes/${id}`);
   };
 
-  return { bikes, loading, error, handleDetailsClick };
+  const handleResetFilters = () => {
+    dispatch(clearFilters());
+  };
+
+  return { bikes, loading, error, handleDetailsClick, handleResetFilters };
 }

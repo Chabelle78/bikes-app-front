@@ -1,8 +1,6 @@
 import type { Bike } from "@/types/Bikes";
 
-import Description from "@/ui-lib/Description/Description";
-import HeaderBadges from "@/ui-lib/CardHeader/HeaderBadges";
-import Footer from "@/ui-lib/CardFooter/Footer";
+import { Description, HeaderBadges, Footer } from "@/ui-lib";
 
 import styles from "./Card.module.scss";
 

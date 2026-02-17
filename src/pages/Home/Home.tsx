@@ -1,13 +1,15 @@
-import { Card } from "@/features/components/Card/Card";
-import type { Bike } from "@/types/Bikes";
 
 import useHome from "./useHome";
 
-import styles from "./Home.module.scss";
+import type { Bike } from "@/types/Bikes";
+import { NotFound } from "@/ui-lib";
+import { Card } from "@/features/components/Card/Card";
 import FiltersHeader from "@/features/components/FilltersHeader/FiltersHeader";
 
+import styles from "./Home.module.scss";
+
 export default function Home() {
-  const { bikes, loading, error, handleDetailsClick } = useHome();
+  const { bikes, loading, error, handleDetailsClick, handleResetFilters } = useHome();
 
   return (
     <div className={styles.container}>
@@ -18,11 +20,22 @@ export default function Home() {
       {error && <p style={{ color: "red" }}>Erreur: {error}</p>}
       <div className={styles.content}>
         <div className={styles.demoContainer}>
-          <div className={styles.grid}>
-            {bikes.map((bike: Bike) => (
-              <Card key={bike.id} item={bike} onClick={handleDetailsClick} />
-            ))}
-          </div>
+          {bikes.length === 0 && !loading && (
+            <NotFound
+              message="Aucun vélo ne correspond à vos critères. Essayez de modifier vos filtres ou de les réinitialiser avec le bouton ci-dessous."
+              actionButton={{
+                label: "Réinitialiser les filtres",
+                onClick: handleResetFilters,
+              }}
+            />
+          )}
+          {bikes.length > 0 && (
+            <div className={styles.grid}>
+              {bikes.map((bike: Bike) => (
+                <Card key={bike.id} item={bike} onClick={handleDetailsClick} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
