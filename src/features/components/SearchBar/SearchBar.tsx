@@ -3,12 +3,18 @@ import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { updateFilter, selectFilters } from "@/features/bikesSlice";
 import styles from "./SearchBar.module.scss";
 
-export default function SearchBar() {
+interface SearchBarProps {
+  disabled?: boolean;
+}
+
+export default function SearchBar({ disabled = false }: SearchBarProps) {
   const dispatch = useAppDispatch();
   const filters = useAppSelector(selectFilters);
   const [searchValue, setSearchValue] = useState(filters.search_term || "");
 
   useEffect(() => {
+    if (disabled) return;
+    
     const timer = setTimeout(() => {
       if (searchValue) {
         dispatch(updateFilter({ search_term: searchValue }));
@@ -19,10 +25,10 @@ export default function SearchBar() {
     }, 300);
 
     return () => clearTimeout(timer);
-  }, [searchValue, dispatch]);
+  }, [searchValue, dispatch, disabled]);
 
   return (
-    <div className={styles.searchContainer}>
+    <div className={`${styles.searchContainer} ${disabled ? styles.disabled : ''}`}>
       <div className={styles.searchWrapper}>
         <svg
           className={styles.searchIcon}
@@ -41,12 +47,14 @@ export default function SearchBar() {
           className={styles.searchInput}
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
+          disabled={disabled}
         />
         {searchValue && (
           <button
             className={styles.clearButton}
             onClick={() => setSearchValue("")}
             aria-label="Effacer la recherche"
+            disabled={disabled}
           >
             ×
           </button>

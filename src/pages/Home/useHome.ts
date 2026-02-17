@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { useFiltersState } from "@/hooks/useFiltersState";
 import {
   fetchBikes,
   selectFilteredBikes,
@@ -15,6 +16,9 @@ export default function useHome() {
   const bikes = useAppSelector(selectFilteredBikes);
   const loading = useAppSelector(selectBikesLoading);
   const error = useAppSelector(selectBikesError);
+
+  // Enable filters on home page
+  useFiltersState(true);
 
   useEffect(() => {
     dispatch(fetchBikes());

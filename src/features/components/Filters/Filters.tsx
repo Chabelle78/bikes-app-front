@@ -3,7 +3,11 @@ import MultiOptions from "../MultiOptions/MultiOptions";
 import styles from "./Filters.module.scss";
 import useFilters from "./useFilters";
 
-export default function Filters() {
+interface FiltersProps {
+  disabled?: boolean;
+}
+
+export default function Filters({ disabled = false }: FiltersProps) {
   const {
     brands,
     selectedBrands,
@@ -27,6 +31,7 @@ export default function Filters() {
         options={brands}
         selectedOptions={selectedBrands}
         onSelectionChange={handleBrandChange}
+        disabled={disabled}
       />
       <MultiOptions
         title="Type de vélo"
@@ -36,6 +41,7 @@ export default function Filters() {
           (value) => ridingTypes.find((t) => t.value === value)?.label || value,
         )}
         onSelectionChange={handleRidingTypeChange}
+        disabled={disabled}
       />
       <MultiOptions
         title="Matériau"
@@ -45,6 +51,7 @@ export default function Filters() {
           (value) => materials.find((m) => m.value === value)?.label || value,
         )}
         onSelectionChange={handleMaterialChange}
+        disabled={disabled}
       />
       <MultiOptions
         title="Couleur"
@@ -54,6 +61,7 @@ export default function Filters() {
           (value) => colors.find((c) => c.value === value)?.label || value,
         )}
         onSelectionChange={handleColorChange}
+        disabled={disabled}
       />
     </div>
   );

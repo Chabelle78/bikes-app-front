@@ -32,13 +32,18 @@
   cursor: pointer;
   transition: all 0.2s ease;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: #3b82f6;
     color: #ffffff;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     transform: scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
 

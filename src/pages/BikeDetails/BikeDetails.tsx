@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useAppSelector } from "@/app/hooks";
+import { useFiltersState } from "@/hooks/useFiltersState";
 import { selectBikeById } from "@/features/bikesSlice";
 import styles from "./BikeDetails.module.scss";
 
@@ -7,6 +8,7 @@ export default function BikeDetails() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const bike = useAppSelector((state) => selectBikeById(state, id!));
+  useFiltersState(false);
 
   if (!bike) {
     return (

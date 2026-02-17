@@ -1,5 +1,11 @@
 .searchContainer {
   margin-bottom: 16px;
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+  }
 }
 
 .searchWrapper {
