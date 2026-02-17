@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 60px); // Hauteur de la viewport moins la navbar
+  height: 100%;
   overflow: hidden;
 }
 
@@ -12,13 +12,13 @@
 .content {
   flex: 1;
   overflow-y: auto;
+  min-height: 0;
+  background: linear-gradient(to bottom, #f9fafb, #ffffff);
 }
 
 .demoContainer {
   width: 100%;
-  min-height: 100vh;
   padding: 24px;
-  background: linear-gradient(to bottom, #f9fafb, #ffffff);
 }
 
 .grid {
