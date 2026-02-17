@@ -5,6 +5,7 @@ import brandsReducer from "../features/brandsSlice";
 import ridingTypesReducer from "../features/ridingTypesSlice";
 import frameMaterialsReducer from "../features/frameMaterialSlice";
 import colorsReducer from "../features/colorSlice";
+import settingsReducer from "../features/settingsSlice";
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     ridingTypes: ridingTypesReducer,
     frameMaterials: frameMaterialsReducer,
     colors: colorsReducer,
+    settings: settingsReducer,
   },
 });
 
