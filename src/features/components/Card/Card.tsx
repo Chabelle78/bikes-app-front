@@ -1,8 +1,6 @@
 import type { Bike } from "@/types/Bikes";
 
-import Description from "@/ui-lib/Description/Description";
-import HeaderBadges from "@/ui-lib/CardHeader/HeaderBadges";
-import Footer from "@/ui-lib/CardFooter/Footer";
+import { Description, HeaderBadges, Footer } from "@/ui-lib";
 
 import styles from "./Card.module.scss";
 
@@ -12,7 +10,6 @@ interface BikeCardProps {
 }
 
 export function Card({ item, onClick }: BikeCardProps) {
-
   return (
     <div className={styles.bikeCard}>
       <HeaderBadges
@@ -20,7 +17,9 @@ export function Card({ item, onClick }: BikeCardProps) {
         type={item.riding_type}
         brand={item.brand}
       />
-      <Description        title={item.name}        description={item.description}
+      <Description
+        title={item.name}
+        description={item.description}
         weight={item.weight}
         wheel={item.wheel_type}
       />

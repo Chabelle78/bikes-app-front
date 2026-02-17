@@ -114,6 +114,8 @@ export const selectActiveFiltersCount = (state: RootState) =>
   Object.values(state.bikes.filters).filter(value => 
     Array.isArray(value) ? value.length > 0 : Boolean(value)
   ).length;
+export const selectBikeById = (state: RootState, bikeId: string) => 
+  state.bikes.bikes.find(bike => bike.id === bikeId);
 
 // Export du reducer
 export default bikesSlice.reducer;

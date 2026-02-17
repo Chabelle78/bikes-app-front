@@ -9,6 +9,7 @@ interface FilterSectionProps {
     defaultOpen?: boolean;
     selectedOptions?: string[];
     onSelectionChange?: (selected: string[]) => void;
+    disabled?: boolean;
 }
 
 export default function MultiOptions({ 
@@ -17,12 +18,13 @@ export default function MultiOptions({
     options, 
     defaultOpen = true,
     selectedOptions = [],
-    onSelectionChange 
+    onSelectionChange,
+    disabled = false
 }: FilterSectionProps) {
     const [isOpen, setIsOpen] = useState(defaultOpen);
 
     const handleCheckboxChange = (option: string) => {
-        if (!onSelectionChange) return;
+        if (!onSelectionChange || disabled) return;
         
         const newSelection = selectedOptions.includes(option)
             ? selectedOptions.filter(item => item !== option)
@@ -32,10 +34,11 @@ export default function MultiOptions({
     };
 
     return (
-        <div className={styles.filterSection}>
+        <div className={`${styles.filterSection} ${disabled ? styles.disabled : ''}`}>
             <button 
                 className={styles.filterTitle}
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => !disabled && setIsOpen(!isOpen)}
+                disabled={disabled}
             >
                 <span className={styles.titleContent}>
                     <span className={styles.filterIcon}>{icon}</span>
@@ -64,6 +67,7 @@ export default function MultiOptions({
                                 className={styles.checkbox}
                                 checked={selectedOptions.includes(option)}
                                 onChange={() => handleCheckboxChange(option)}
+                                disabled={disabled}
                             />
                             <span className={styles.optionLabel}>{option}</span>
                         </label>

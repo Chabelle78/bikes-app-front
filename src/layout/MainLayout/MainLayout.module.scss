@@ -43,10 +43,11 @@
 }
 
 .main {
-  min-height: calc(100% - 64px);
+  height: calc(100vh - 64px);
   width: 85%;
   margin-left: 15%;
-  padding:20px;
+  padding: 20px;
+  overflow: hidden;
 }
 
 // Media queries pour responsive mobile

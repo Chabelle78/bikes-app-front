@@ -4,10 +4,11 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import MainLayout from "./layout/MainLayout";
+import MainLayout from "./layout/MainLayout/MainLayout";
 import PageLogin from "./pages/PageLogin";
-import Home from "./pages/Bikes/Home";
+import Home from "./pages/Home/Home";
 import Error from "./pages/Error";
+import BikeDetails from "./pages/BikeDetails/BikeDetails";
 
 export const LocationDisplay = () => {
   const location = useLocation();
@@ -27,6 +28,11 @@ const routes = [
       {
         path: "/",
         element: <Home />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/bikes/:id",
+        element: <BikeDetails />,
         errorElement: <Error />,
       },
     ],
