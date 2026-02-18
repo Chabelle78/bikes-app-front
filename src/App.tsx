@@ -9,6 +9,7 @@ import PageLogin from "./pages/PageLogin";
 import Home from "./pages/Home/Home";
 import Error from "./pages/Error";
 import BikeDetails from "./pages/BikeDetails/BikeDetails";
+import Teams from "./features/components/Teams";
 
 export const LocationDisplay = () => {
   const location = useLocation();
@@ -33,6 +34,11 @@ const routes = [
       {
         path: "/bikes/:id",
         element: <BikeDetails />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/teams",
+        element: <Teams />,
         errorElement: <Error />,
       },
     ],
