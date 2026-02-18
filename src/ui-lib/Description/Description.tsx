@@ -1,34 +1,28 @@
+import type { CardSpec } from "../Card/Card";
 import styles from "./Description.module.scss";
 
 interface DescriptionProps {
   title?: string;
   description?: string;
-  weight?: string;
-  wheel?: string;
+  specs?: CardSpec[]; // Caractéristiques génériques
 }
 
 export default function Description({
   title,
   description,
-  weight,
-  wheel,
+  specs = [],
 }: DescriptionProps) {
   return (
     <div className={styles.description}>
-      {(weight || wheel) && (
+      {specs.length > 0 && (
         <div className={styles.specs}>
-          {weight && (
-            <div className={styles.spec}>
-              <span className={styles.weightIcon}></span>
-              <strong>{weight}</strong>
+          {specs.map((spec, index) => (
+            <div key={index} className={styles.spec}>
+              {spec.icon && <span className={styles[spec.icon]}></span>}
+              {spec.label && <span>{spec.label}: </span>}
+              <strong>{spec.value}</strong>
             </div>
-          )}
-          {wheel && (
-            <div className={styles.spec}>
-              <span className={styles.wheelIcon}></span>
-              <strong>{wheel}</strong>
-            </div>
-          )}
+          ))}
         </div>
       )}
       {title && <h2>{title}</h2>}
