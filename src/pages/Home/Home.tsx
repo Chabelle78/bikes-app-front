@@ -3,7 +3,7 @@ import useHome from "./useHome";
 
 import type { Bike } from "@/types/Bikes";
 import { NotFound } from "@/ui-lib";
-import { Card } from "@/features/components/Card/Card";
+import { BikeCard } from "@/features/bikes/BikeCard";
 import FiltersHeader from "@/features/components/FilltersHeader/FiltersHeader";
 
 import styles from "./Home.module.scss";
@@ -32,7 +32,11 @@ export default function Home() {
           {bikes.length > 0 && (
             <div className={styles.grid}>
               {bikes.map((bike: Bike) => (
-                <Card key={bike.id} item={bike} onClick={handleDetailsClick} />
+                <BikeCard
+                  key={bike.id}
+                  bike={bike}
+                  onClick={handleDetailsClick}
+                />
               ))}
             </div>
           )}
