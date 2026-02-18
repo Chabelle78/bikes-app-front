@@ -24,32 +24,26 @@ export default function RangeFilter({
     unit = ''
 }: RangeFilterProps) {
     const [isOpen, setIsOpen] = useState(defaultOpen);
-    const [minValue, setMinValue] = useState<string>(min?.toString() || '');
-    const [maxValue, setMaxValue] = useState<string>(max?.toString() || '');
 
     const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
-        setMinValue(value);
         
         if (!onRangeChange || disabled) return;
         
         const minNum = value ? parseFloat(value) : undefined;
-        const maxNum = maxValue ? parseFloat(maxValue) : undefined;
-        onRangeChange(minNum, maxNum);
+        onRangeChange(minNum, max);
     };
 
     const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
-        setMaxValue(value);
         
         if (!onRangeChange || disabled) return;
         
-        const minNum = minValue ? parseFloat(minValue) : undefined;
         const maxNum = value ? parseFloat(value) : undefined;
-        onRangeChange(minNum, maxNum);
+        onRangeChange(min, maxNum);
     };
 
-    const hasActiveFilter = minValue !== '' || maxValue !== '';
+    const hasActiveFilter = min !== undefined || max !== undefined;
 
     return (
         <div className={`${styles.filterSection} ${disabled ? styles.disabled : ''}`}>
@@ -84,7 +78,7 @@ export default function RangeFilter({
                             <input 
                                 type="number"
                                 className={styles.rangeInput}
-                                value={minValue}
+                                value={min?.toString() ?? ''}
                                 onChange={handleMinChange}
                                 disabled={disabled}
                                 placeholder="0"
@@ -100,7 +94,7 @@ export default function RangeFilter({
                             <input 
                                 type="number"
                                 className={styles.rangeInput}
-                                value={maxValue}
+                                value={max?.toString() ?? ''}
                                 onChange={handleMaxChange}
                                 disabled={disabled}
                                 placeholder="∞"
