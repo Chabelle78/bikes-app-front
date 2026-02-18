@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { fetchBikes } from "@/features/bikes/bikesSlice";
+import { fetchBrands } from "@/features/brandsSlice";
 import {
-  fetchBikes,
   selectFilteredBikes,
   selectBikesLoading,
   selectBikesError,
-} from "@/features/bikesSlice";
-import { fetchBrands } from "@/features/brandsSlice";
+} from "@/features/bikes/bikes.selector";
 
 export default function useHome() {
   const dispatch = useAppDispatch();

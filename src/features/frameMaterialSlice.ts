@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../app/store";
 import type { FrameMaterial } from "../types/Bikes";
-import { fetchBikes } from "./bikesSlice";
+import { fetchBikes } from "./bikes/bikesSlice";
 
 interface FrameMaterialsState {
   frameMaterials: FrameMaterial[];

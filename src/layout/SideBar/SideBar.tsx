@@ -1,7 +1,7 @@
 import SearchBar from "@/features/components/SearchBar/SearchBar";
 import Filters from "@/features/components/Filters/Filters";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
-import { clearFilters } from "@/features/bikesSlice";
+import { clearFilters } from "@/features/bikes/bikesSlice";
 import { selectAreFiltersDisabled } from "@/features/settingsSlice";
 
 import styles from "./SideBar.module.scss";

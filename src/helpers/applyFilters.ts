@@ -1,4 +1,4 @@
-import type { BikeFilters } from "@/features/bikesSlice";
+import type { BikeFilters } from "@/features/bikes/bikesSlice";
 import type { BrandFilters } from "@/features/brandsSlice";
 import type { Bike } from "@/types/Bikes";
 import type { Brand } from "@/types/Brand";

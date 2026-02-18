@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { useFiltersState } from "@/hooks/useFiltersState";
+import { fetchBikes, clearFilters } from "@/features/bikes/bikesSlice";
 import {
-  fetchBikes,
   selectFilteredBikes,
   selectBikesLoading,
   selectBikesError,
-  clearFilters,
-} from "@/features/bikesSlice";
+} from "@/features/bikes/bikes.selector";
 import { fetchBrands } from "@/features/brandsSlice";
 import { useNavigate } from "react-router-dom";
 

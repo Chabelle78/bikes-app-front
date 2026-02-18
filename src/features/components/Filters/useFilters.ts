@@ -2,13 +2,15 @@ import { useMemo } from "react";
 
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
 
-import { updateFilter, selectFilters } from "@/features/bikesSlice";
+import { updateFilter } from "@/features/bikes/bikesSlice";
+import { selectFilters } from "@/features/bikes/bikes.selector";
 import { selectAllBrands } from "@/features/brandsSlice";
 import { selectRidingTypes } from "@/features/ridingTypesSlice";
 import { selectFrameMaterials } from "@/features/frameMaterialSlice";
-import { selectColors } from "@/features/colorSlice";
 
 import { colorLabels, materialLabels, ridingTypeLabels } from "@/utils/labels";
+
+import { selectColors } from "@/features/colorSlice";
 
 export default function useFilters(): {
   brands: string[];
