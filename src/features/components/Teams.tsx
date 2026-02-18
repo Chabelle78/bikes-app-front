@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { Team } from "@/types/Team";
 import TeamEquipment from "./TeamEquipment";
 import useTeams from "./useTeams";
 import styles from "./Teams.module.scss";
+import { useAppDispatch } from "@/app/hooks";
+import { disableFilters, enableFilters } from "@/features/settingsSlice";
 
 export default function Teams() {
   const { teams, loading, error } = useTeams();
+  const dispatch = useAppDispatch();
   const [expandedTeamId, setExpandedTeamId] = useState<string | null>(null);
+
+  // Désactiver les filtres au montage du composant
+  useEffect(() => {
+    dispatch(disableFilters());
+    
+    // Réactiver les filtres au démontage du composant
+    return () => {
+      dispatch(enableFilters());
+    };
+  }, [dispatch]);
 
   const toggleEquipment = (teamId: string) => {
     setExpandedTeamId(expandedTeamId === teamId ? null : teamId);
