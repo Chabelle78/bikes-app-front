@@ -1,0 +1,142 @@
+.filterSection {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 8px;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+.filterTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0 6px 0;
+  padding: 4px 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #111827;
+  }
+}
+
+.titleContent {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  .selectedCount {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3b82f6;
+    margin-left: 2px;
+  }
+}
+
+.filterIcon {
+  font-size: 13px;
+}
+
+.chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+  color: #9ca3af;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.rangeContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 4px 6px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.inputLabel {
+  font-size: 10px;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.rangeInput {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 12px;
+  color: #374151;
+  border: 1.5px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #9ca3af;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+  }
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  // Supprime les flèches du input number
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.unit {
+  position: absolute;
+  right: 8px;
+  font-size: 10px;
+  color: #6b7280;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.separator {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+  padding-bottom: 2px;
+  user-select: none;
+}
