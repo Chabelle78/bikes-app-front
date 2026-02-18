@@ -1,41 +1,18 @@
-import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import FilterTag from "../FilterTag/FilterTag";
 
-import { removeFilterValue, clearFilters } from "@/features/bikes/bikesSlice";
-import type { BikeFilters } from "@/features/bikes/bikesSlice";
-import {
-  selectActiveFiltersCount,
-  selectFilters,
-} from "@/features/bikes/bikes.selector";
-
-import styles from "./FiltersHeader.module.scss";
 import { getDisplayValue } from "@/utils/getDisplayValue";
 
+import styles from "./FiltersHeader.module.scss";
+import useFilterHeader from "./useFilterHeader";
+
 export default function FiltersHeader() {
-  const dispatch = useAppDispatch();
-  const filters = useAppSelector(selectFilters);
-  const activeFiltersCount = useAppSelector(selectActiveFiltersCount);
-
-  const handleRemoveFilter = (key: string, value: string) => {
-    dispatch(
-      removeFilterValue({
-        key: key as keyof BikeFilters,
-        value,
-      }),
-    );
-  };
-
-  const handleClearAll = () => {
-    dispatch(clearFilters());
-  };
-
-  const filterLabels: Record<string, string> = {
-    brand: "Marque",
-    riding_type: "Type",
-    frame_material: "Matériau",
-    color: "Couleur",
-    search_term: "Recherche",
-  };
+  const {
+    filters,
+    activeFiltersCount,
+    handleRemoveFilter,
+    handleClearAll,
+    filterLabels,
+  } = useFilterHeader();
 
   return (
     <div className={styles.containerFiltersHeader}>
@@ -50,7 +27,7 @@ export default function FiltersHeader() {
         <div className={styles.filtersContainer}>
           <div className={styles.filterTags}>
             {Object.entries(filters).map(([key, value]) => {
-              // Gérer les tableaux et les chaînes
+              // Handle both single and multiple values for filters
               const values = Array.isArray(value) ? value : [value];
               return values.map((val, index) => (
                 <FilterTag
