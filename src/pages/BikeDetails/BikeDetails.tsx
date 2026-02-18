@@ -1,8 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useAppSelector } from "@/app/hooks";
 import { useFiltersState } from "@/hooks/useFiltersState";
-import { selectBikeById } from "@/features/bikesSlice";
+
+
 import styles from "./BikeDetails.module.scss";
+import { selectBikeById } from "@/features/bikes/bikes.selector";
 
 export default function BikeDetails() {
   const { id } = useParams<{ id: string }>();

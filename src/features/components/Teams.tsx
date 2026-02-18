@@ -4,7 +4,8 @@ import TeamEquipment from "./TeamEquipment";
 import useTeams from "./useTeams";
 import styles from "./Teams.module.scss";
 import { useAppDispatch } from "@/app/hooks";
-import { disableFilters, enableFilters } from "@/features/settingsSlice";
+import { disableFilters, enableFilters } from "../settings/settingsSlice";
+
 
 export default function Teams() {
   const { teams, loading, error } = useTeams();
