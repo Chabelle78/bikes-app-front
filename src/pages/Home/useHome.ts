@@ -7,8 +7,8 @@ import {
   selectBikesLoading,
   selectBikesError,
 } from "@/features/bikes/bikes.selector";
-import { fetchBrands } from "@/features/brandsSlice";
 import { useNavigate } from "react-router-dom";
+import { fetchBrands } from "@/features/brands/brandsSlice";
 
 export default function useHome() {
   const navigate = useNavigate();

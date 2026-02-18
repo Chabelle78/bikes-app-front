@@ -4,13 +4,14 @@ import { useAppDispatch, useAppSelector } from "@/app/hooks";
 
 import { updateFilter } from "@/features/bikes/bikesSlice";
 import { selectFilters } from "@/features/bikes/bikes.selector";
-import { selectAllBrands } from "@/features/brandsSlice";
 import { selectRidingTypes } from "@/features/ridingTypesSlice";
 import { selectFrameMaterials } from "@/features/frameMaterialSlice";
 
 import { colorLabels, materialLabels, ridingTypeLabels } from "@/utils/labels";
 
 import { selectColors } from "@/features/colorSlice";
+import { selectAllBrands } from "@/features/brands/brands.selector";
+import type { Brand } from "@/types/Brand";
 
 export default function useFilters(): {
   brands: string[];
@@ -34,7 +35,7 @@ export default function useFilters(): {
   const allColors = useAppSelector(selectColors);
 
   const brands = useMemo(() => {
-    return allBrands.map((brand) => brand.name).sort();
+    return allBrands.map((brand:Brand) => brand.name).sort();
   }, [allBrands]);
 
   const ridingTypes = useMemo(() => {

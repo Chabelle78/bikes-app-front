@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import bikesReducer from "../features/bikes/bikesSlice";
-import brandsReducer from "../features/brandsSlice";
+import brandsReducer from "../features/brands/brandsSlice";
 import ridingTypesReducer from "../features/ridingTypesSlice";
 import frameMaterialsReducer from "../features/frameMaterialSlice";
 import colorsReducer from "../features/colorSlice";
