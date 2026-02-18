@@ -1,67 +1,18 @@
-import { useAppDispatch, useAppSelector } from '@/app/hooks';
-import { 
-  selectFilters, 
-  selectActiveFiltersCount,
-  removeFilterValue,
-  clearFilters
-} from '@/features/bikesSlice';
-import FilterTag from '../FilterTag/FilterTag';
-import styles from './FiltersHeader.module.scss';
+import FilterTag from "../FilterTag/FilterTag";
 
-// Mapping des valeurs techniques vers des labels lisibles
-const RIDING_TYPE_LABELS: Record<string, string> = {
-  'Road': 'Route',
-  'VTT': 'VTT',
-  'Mountain': 'Mountain',
-  'Gravel': 'Gravel',
-  'Urban': 'Ville',
-  'Electric': 'Électrique',
-  'Hybrid': 'Hybride',
-  'Triathlon': 'Triathlon',
-};
+import { getDisplayValue } from "@/utils/getDisplayValue";
 
-const MATERIAL_LABELS: Record<string, string> = {
-  'Carbon': 'Carbone',
-  'Aluminum': 'Aluminium',
-  'Steel': 'Acier',
-  'Titanium': 'Titane',
-  'Carbon Fiber': 'Fibre de carbone',
-};
+import styles from "./FiltersHeader.module.scss";
+import useFilterHeader from "./useFilterHeader";
 
 export default function FiltersHeader() {
-  const dispatch = useAppDispatch();
-  const filters = useAppSelector(selectFilters);
-  const activeFiltersCount = useAppSelector(selectActiveFiltersCount);
-
-  const handleRemoveFilter = (key: string, value: string) => {
-    dispatch(removeFilterValue({ 
-      key: key as keyof typeof filters, 
-      value 
-    }));
-  };
-
-  const handleClearAll = () => {
-    dispatch(clearFilters());
-  };
-
-  const filterLabels: Record<string, string> = {
-    brand: 'Marque',
-    riding_type: 'Type',
-    frame_material: 'Matériau',
-    colors: 'Couleur',
-    search_term: 'Recherche',
-  };
-
-  // Fonction pour obtenir la valeur affichable
-  const getDisplayValue = (key: string, value: string): string => {
-    if (key === 'riding_type') {
-      return RIDING_TYPE_LABELS[value] || value;
-    }
-    if (key === 'frame_material') {
-      return MATERIAL_LABELS[value] || value;
-    }
-    return value;
-  };
+  const {
+    filters,
+    activeFiltersCount,
+    handleRemoveFilter,
+    handleClearAll,
+    filterLabels,
+  } = useFilterHeader();
 
   return (
     <div className={styles.containerFiltersHeader}>
@@ -71,12 +22,12 @@ export default function FiltersHeader() {
           <span className={styles.count}>({activeFiltersCount})</span>
         )}
       </h2>
-      
+
       {activeFiltersCount > 0 && (
         <div className={styles.filtersContainer}>
           <div className={styles.filterTags}>
             {Object.entries(filters).map(([key, value]) => {
-              // Gérer les tableaux et les chaînes
+              // Handle both single and multiple values for filters
               const values = Array.isArray(value) ? value : [value];
               return values.map((val, index) => (
                 <FilterTag
@@ -88,10 +39,7 @@ export default function FiltersHeader() {
               ));
             })}
           </div>
-          <button
-            className={styles.clearAllButton}
-            onClick={handleClearAll}
-          >
+          <button className={styles.clearAllButton} onClick={handleClearAll}>
             Effacer tout
           </button>
         </div>

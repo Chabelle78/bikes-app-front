@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "@/app/hooks";
-import { updateFilter, selectFilters } from "@/features/bikesSlice";
-import styles from "./SearchBar.module.scss";
 
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { updateFilter } from "@/features/bikes/bikesSlice";
+
+import { selectFilters } from "@/features/bikes/bikes.selector";
+
+import styles from "./SearchBar.module.scss";
 interface SearchBarProps {
   disabled?: boolean;
 }

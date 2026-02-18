@@ -1,19 +1,19 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import bikesReducer from "../features/bikesSlice";
-import brandsReducer from "../features/brandsSlice";
-import ridingTypesReducer from "../features/ridingTypesSlice";
-import frameMaterialsReducer from "../features/frameMaterialSlice";
-import colorsReducer from "../features/colorSlice";
-import settingsReducer from "../features/settingsSlice";
+import bikesReducer from "../features/bikes/bikesSlice";
+import brandsReducer from "../features/brands/brandsSlice";
+import ridingTypesReducer from "../features/ridingTypes/ridingTypesSlice";
+import frameMaterialsReducer from "../features/frames/frameMaterialsSlice";
+import colorsReducer from "../features/colors/colorsSlice";
+import settingsReducer from "../features/settings/settingsSlice";
 
 export const store = configureStore({
   reducer: {
     bikes: bikesReducer,
     brands: brandsReducer,
-    ridingTypes: ridingTypesReducer,
-    frameMaterials: frameMaterialsReducer,
     colors: colorsReducer,
+    frameMaterials: frameMaterialsReducer,
+    ridingTypes: ridingTypesReducer,
     settings: settingsReducer,
   },
 });
