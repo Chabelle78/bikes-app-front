@@ -27,6 +27,9 @@ export default function useFilters(): {
   colors: { label: string; value: string }[];
   selectedColors: string[];
   handleColorChange: (selected: string[]) => void;
+  weightMin?: number;
+  weightMax?: number;
+  handleWeightChange: (min?: number, max?: number) => void;
 } {
   const dispatch = useAppDispatch();
   const filters = useAppSelector(selectFilters);
@@ -64,6 +67,8 @@ export default function useFilters(): {
   const selectedRidingTypes = filters.riding_type || [];
   const selectedMaterials = filters.frame_material || [];
   const selectedColors = filters.color || [];
+  const weightMin = filters.weight_min;
+  const weightMax = filters.weight_max;
 
   // Handlers
   const handleBrandChange = (selected: string[]) => {
@@ -98,6 +103,13 @@ export default function useFilters(): {
     dispatch(updateFilter({ color: selectedValues }));
   };
 
+  const handleWeightChange = (min?: number, max?: number) => {
+    dispatch(updateFilter({ 
+      weight_min: min, 
+      weight_max: max 
+    }));
+  };
+
   return {
     brands,
     selectedBrands,
@@ -111,5 +123,8 @@ export default function useFilters(): {
     colors,
     selectedColors,
     handleColorChange,
+    weightMin,
+    weightMax,
+    handleWeightChange,
   };
 }

@@ -1,4 +1,5 @@
 import MultiOptions from "../MultiOptions/MultiOptions";
+import RangeFilter from "../RangeFilter/RangeFilter";
 
 import styles from "./Filters.module.scss";
 import useFilters from "./useFilters";
@@ -21,6 +22,9 @@ export default function Filters({ disabled = false }: FiltersProps) {
     colors,
     selectedColors,
     handleColorChange,
+    weightMin,
+    weightMax,
+    handleWeightChange,
   } = useFilters();
 
   return (
@@ -62,6 +66,15 @@ export default function Filters({ disabled = false }: FiltersProps) {
         )}
         onSelectionChange={handleColorChange}
         disabled={disabled}
+      />
+      <RangeFilter
+        title="Poids"
+        icon="⚖️"
+        min={weightMin}
+        max={weightMax}
+        onRangeChange={handleWeightChange}
+        disabled={disabled}
+        unit="kg"
       />
     </div>
   );
