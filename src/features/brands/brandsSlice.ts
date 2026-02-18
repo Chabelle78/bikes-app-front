@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import type { Brand } from '../types/Brand';
-import { getbrands } from '../services/api/brands';
-import type { RootState } from '../app/store';
+
 import { applyBrandFilters } from '@/helpers/applyFilters';
+import type { Brand } from '@/types/Brand';
+import { getbrands } from '@/services/api/brands';
 
 export interface BrandFilters {
   name?: string;
@@ -83,16 +83,6 @@ const brandsSlice = createSlice({
 
 // Export des actions
 export const { setFilters, updateFilter, clearFilters, removeFilter } = brandsSlice.actions;
-
-// Sélecteurs
-export const selectAllBrands = (state: RootState) => state.brands.brands;
-export const selectFilteredBrands = (state: RootState) => state.brands.filteredBrands;
-export const selectBrandFilters = (state: RootState) => state.brands.filters;
-export const selectBrandsLoading = (state: RootState) => state.brands.loading;
-export const selectBrandsError = (state: RootState) => state.brands.error;
-export const selectActiveFiltersCount = (state: RootState) => {
-  return Object.keys(state.brands.filters).length;
-};
 
 // Export du reducer
 export default brandsSlice.reducer;

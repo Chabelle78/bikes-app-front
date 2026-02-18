@@ -1,10 +1,10 @@
 import SearchBar from "@/features/components/SearchBar/SearchBar";
 import Filters from "@/features/components/Filters/Filters";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
-import { clearFilters } from "@/features/bikesSlice";
-import { selectAreFiltersDisabled } from "@/features/settingsSlice";
+import { clearFilters } from "@/features/bikes/bikesSlice";
 
 import styles from "./SideBar.module.scss";
+import { selectAreFiltersDisabled } from "@/features/settings/settings.selector";
 
 export default function SidesBar() {
   const dispatch = useAppDispatch();

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { RootState } from "@/app/store";
+
 
 interface SettingsState {
     areFiltersDisabled: boolean;
@@ -26,8 +26,5 @@ export const {
   enableFilters,
   disableFilters,
 } = settingsSlice.actions;
-
-// Selectors
-export const selectAreFiltersDisabled = (state: RootState) => state.settings.areFiltersDisabled;
 
 export default settingsSlice.reducer;
