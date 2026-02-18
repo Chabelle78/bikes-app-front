@@ -4,14 +4,15 @@ import { useAppDispatch, useAppSelector } from "@/app/hooks";
 
 import { updateFilter } from "@/features/bikes/bikesSlice";
 import { selectFilters } from "@/features/bikes/bikes.selector";
-import { selectRidingTypes } from "@/features/ridingTypesSlice";
-import { selectFrameMaterials } from "@/features/frameMaterialSlice";
 
 import { colorLabels, materialLabels, ridingTypeLabels } from "@/utils/labels";
 
-import { selectColors } from "@/features/colorSlice";
 import { selectAllBrands } from "@/features/brands/brands.selector";
 import type { Brand } from "@/types/Brand";
+import { selectRidingTypes } from "@/features/ridingTypes/ridingTypes.selector";
+import { selectFrameMaterials } from "@/features/frames/frameMaterials.selector";
+import { selectColors } from "@/features/colors/colorsSlice";
+import type { FrameMaterial, RidingType } from "@/types/Bikes";
 
 export default function useFilters(): {
   brands: string[];
@@ -35,25 +36,25 @@ export default function useFilters(): {
   const allColors = useAppSelector(selectColors);
 
   const brands = useMemo(() => {
-    return allBrands.map((brand:Brand) => brand.name).sort();
+    return allBrands.map((brand: Brand) => brand.name).sort();
   }, [allBrands]);
 
   const ridingTypes = useMemo(() => {
-    return allRidingTypes.map((type) => ({
+    return allRidingTypes.map((type: RidingType) => ({
       label: ridingTypeLabels[type] || type,
       value: type,
     }));
   }, [allRidingTypes]);
 
   const materials = useMemo(() => {
-    return allFrameMaterials.map((material) => ({
+    return allFrameMaterials.map((material: FrameMaterial) => ({
       label: materialLabels[material] || material,
       value: material,
     }));
   }, [allFrameMaterials]);
 
   const colors = useMemo(() => {
-    return allColors.map((color) => ({
+    return allColors.map((color: string) => ({
       label: colorLabels[color] || color,
       value: color,
     }));

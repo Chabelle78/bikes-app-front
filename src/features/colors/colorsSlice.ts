@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { RootState } from "../app/store";
-import { fetchBikes } from "./bikes/bikesSlice";
+import { fetchBikes } from "../bikes/bikesSlice";
+import type { RootState } from "@/app/store";
 
 interface ColorsState {
   colors: string[];

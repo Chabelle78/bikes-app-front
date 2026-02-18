@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { RootState } from "../app/store";
-import type { FrameMaterial } from "../types/Bikes";
-import { fetchBikes } from "./bikes/bikesSlice";
+
+import type { FrameMaterial } from "../../types/Bikes";
+import { fetchBikes } from "../bikes/bikesSlice";
 
 interface FrameMaterialsState {
   frameMaterials: FrameMaterial[];
@@ -17,20 +17,19 @@ const frameMaterialsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchBikes.fulfilled, (state, action) => {
-      // Extraire tous les matériaux uniques (en filtrant les undefined)
+      // get unique frame materials
       const uniqueMaterials = Array.from(
         new Set(
           action.payload
             .map((bike) => bike.frame_material)
-            .filter((material): material is FrameMaterial => material !== undefined)
-        )
+            .filter(
+              (material): material is FrameMaterial => material !== undefined,
+            ),
+        ),
       );
       state.frameMaterials = uniqueMaterials.sort();
     });
   },
 });
-
-export const selectFrameMaterials = (state: RootState) =>
-  state.frameMaterials.frameMaterials;
 
 export default frameMaterialsSlice.reducer;
