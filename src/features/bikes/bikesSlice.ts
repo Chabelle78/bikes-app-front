@@ -12,6 +12,8 @@ export interface BikeFilters {
   frame_material?: string[];
   color?: string[];
   search_term?: string;
+  weight_min?: number;
+  weight_max?: number;
 }
 
 interface BikesState {
@@ -61,6 +63,13 @@ const bikesSlice = createSlice({
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { [action.payload]: _, ...rest } = state.filters;
       state.filters = rest;
+      
+      // Si on supprime weight_min, on supprime aussi weight_max et vice versa
+      if (action.payload === 'weight_min' || action.payload === 'weight_max') {
+        delete state.filters.weight_min;
+        delete state.filters.weight_max;
+      }
+      
       state.filteredBikes = applyFiltersBikes(state.bikes, state.filters);
     },
     removeFilterValue: (state, action: PayloadAction<{ key: keyof BikeFilters; value: string }>) => {

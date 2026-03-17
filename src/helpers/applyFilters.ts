@@ -42,6 +42,22 @@ export const applyFiltersBikes = (
     );
   }
 
+  if (filters.weight_min !== undefined || filters.weight_max !== undefined) {
+    filtered = filtered.filter((b) => {
+      if (!b.weight || typeof b.weight !== "string") return false;
+
+      const weightValue = parseFloat(b.weight);
+      if (isNaN(weightValue)) return false;
+
+      const isAboveMin =
+        filters.weight_min === undefined || weightValue >= filters.weight_min;
+      const isBelowMax =
+        filters.weight_max === undefined || weightValue <= filters.weight_max;
+
+      return isAboveMin && isBelowMax;
+    });
+  }
+
   return filtered;
 };
 

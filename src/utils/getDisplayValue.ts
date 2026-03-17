@@ -25,5 +25,8 @@ export const getDisplayValue = (key: string, value: string): string => {
   if (key === "frame_material") {
     return MATERIAL_LABELS[value] || value;
   }
+  if (key === "weight_min" || key === "weight_max") {
+    return `${value} kg`;
+  }
   return value;
 };
